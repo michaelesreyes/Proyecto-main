@@ -1,0 +1,55 @@
+.in-container{
+    margin-right: 0;
+    margin-top: 0;
+    width: 100%;
+    background-color: #DDDEDE;
+}
+
+.card-detail{
+    width: 30rem;
+    height: 30rem;
+}
+
+.row{
+    margin-top: 6rem;
+}
+
+.card-color-detail{
+    width: auto;
+    height: 20rem;
+    border: solid 0.1px gray;
+    background-color: #BFE5F7;
+    margin: 20px 20px 0px;
+    border-radius: 16px;
+}
+
+body{
+    background-color: #C6CACC;
+}
+
+.card-body-detail{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.price-detail{
+    display: flex;
+    margin-left: 12px;
+    font-size: 18px;
+}
+
+.size-detail{
+    display: flex;
+    margin-left: 12px;
+}
+
+.btn-primary-detail{
+width: 28rem !important;
+margin-top:20px !important;
+}
+
+.detail-text{
+    
+    background-color: #DDDEDE;
+}
