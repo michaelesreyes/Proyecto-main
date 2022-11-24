@@ -52,7 +52,7 @@ function initElement() {
         objLoader.load(objpath, function (object) {
             modelLoad = object;
             scene.add(modelLoad);
-            object.scale.set(1, 1, 1);
+            object.scale.set(35, 35, 35);
             object.position.y = 0;
             object.position.x = 0;
         });
