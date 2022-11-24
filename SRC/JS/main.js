@@ -1,9 +1,9 @@
-var scene=NULL,
-camera=NULL,
-renderer=NULL,
-controls=NULL,
-light=NULL,
-general = '../../SRC/MODELS/JORDAN1/';
+var scene,
+    camera,
+    renderer,
+    controls,
+    light;
+
 
 function start() {
     initScene();
@@ -34,30 +34,32 @@ function initElement() {
     renderer.setSize(window.innerWidth, window.innerHeight - 4);
     renderer.setSize(600,600)
 
-    camera.position.set(0,0,1)
+    camera.position.set(10,10,1)
 
-    createFistModel(general,'Jordan1.mtl', 'Jordan1.obj');  
-}
+    var general = '../SRC/MODELS/JORDAN 1/';
+    var mtlpath = 'Jordan1.mtl';
+    var objpath = 'Jordan1.obj';
 
-function createFistModel(generalPath, pathMtl, pathObj) {
     var mtlLoader = new THREE.MTLLoader();
-    mtlLoader.setTexturePath(generalPath);
-    mtlLoader.setPath(generalPath);
-    mtlLoader.load(pathMtl, function (materials) {
+    mtlLoader.setResourcePath(general);
+    mtlLoader.setPath('../SRC/MODELS/JORDAN 1/');
+    mtlLoader.load('Jordan1.mtl', function (materials) {
         materials.preload();
+
         var objLoader = new THREE.OBJLoader();
         objLoader.setMaterials(materials);
-        objLoader.setPath(generalPath);
-        objLoader.load(pathObj, function (object) {
+        objLoader.setPath(general);
+        objLoader.load('Jordan1.obj', function (object) {
             modelLoad = object;
-            figuresGeo.push(modelLoad);
-            scene.add(object);
-            object.scale.set(5, 5, 5);
-            object.position.y = 10;
+            scene.add(modelLoad);
+            object.scale.set(0.5, 0.5, 0.5);
+            object.position.y = 0;
             object.position.x = 0;
         });
     });
+  
 }
+
 
 function createLight() {
     var light2 = new THREE.AmbientLight(0xffffff);
