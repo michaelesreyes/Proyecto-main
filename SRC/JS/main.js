@@ -41,15 +41,15 @@ function initElement() {
     var objpath = 'Jordan1.obj';
 
     var mtlLoader = new THREE.MTLLoader();
-    mtlLoader.setResourcePath(general);
-    mtlLoader.setPath('../SRC/MODELS/JORDAN 1/');
-    mtlLoader.load('Jordan1.mtl', function (materials) {
+    mtlLoader.setTexturePath(general);
+    mtlLoader.setPath(general);
+    mtlLoader.load(mtlpath, function (materials) {
         materials.preload();
 
         var objLoader = new THREE.OBJLoader();
         objLoader.setMaterials(materials);
         objLoader.setPath(general);
-        objLoader.load('Jordan1.obj', function (object) {
+        objLoader.load(objpath, function (object) {
             modelLoad = object;
             scene.add(modelLoad);
             object.scale.set(0.5, 0.5, 0.5);
