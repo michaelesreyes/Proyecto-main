@@ -7,19 +7,26 @@
     <title>Detalle del producto</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel='stylesheet' type='text/css' media='screen' href='../style/detail-style.css'>
-    <link rel='stylesheet' type='text/css' media='screen' href='../style/common-style.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../SRC/CSS/detail-style.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../SRC/CSS/common-style.css'>
+
+    <script src="../SRC/LIBS/BUILD/three.js"></script>
+    <script src="../SRC/LIBS/BUILD/OrbitControls.js"></script>
+    <script src="../SRC/LOAD/DRACOLoader.js"></script>
+    <script src="../SRC/LOAD/OBJLoader.js"></script>
+    <script src="../SRC/LOAD/MTLLoader.js"></script>
+    <script src="../SRC/JS/Details.js"></script>
 </head>
 
-<body>
+<body onload="start()">
     <nav class="navbar navbar-expand-lg in-container">
         <div class="collapse navbar-collapse nav-container" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">INICIO</a>
+                    <a class="nav-link" href="./index.html">INICIO</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">CATALOGO</a>
+                    <a class="nav-link" href="./galery.html">CATALOGO</a>
                 </li>
             </ul>
             <div class="nav-right">
@@ -36,8 +43,7 @@
             <div class="col">
                 <div class="card card-detail">
                     <div class="card-color-detail">
-                        <div>
-                        </div>
+                        <canvas id="Screen3D"></canvas>
                     </div>
                     <div class="card-body card-body-detail">
                         <div class="price-container-detail">

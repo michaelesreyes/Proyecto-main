@@ -29,19 +29,19 @@ function initElement() {
     var light = new THREE.HemisphereLight(0xeeeeff, 0x777788, 0.75);
     light.position.set(0.5, 1, 0.75);
     scene.add(light);
-    const gridHelper = new THREE.GridHelper(100,100,0x000000,0xffffff);
+    const gridHelper = new THREE.GridHelper(0,0,0xDDDEDE,0xDDDEDE);
     scene.add(gridHelper)
     renderer.setSize(window.innerWidth, window.innerHeight - 4);
     renderer.setSize(600,600)
 
-    camera.position.set(10,10,1)
+    camera.position.set(5,5,1)
 
-    var general = '../SRC/MODELS/JORDAN 1/';
-    var mtlpath = 'Jordan1.mtl';
-    var objpath = 'Jordan1.obj';
+    var general = '../SRC/MODELS/Adidas/';
+    var mtlpath = 'adidas.mtl';
+    var objpath = 'adidas.obj';
 
     var mtlLoader = new THREE.MTLLoader();
-    mtlLoader.setTexturePath(general);
+    mtlLoader.setTexturePath(general );
     mtlLoader.setPath(general);
     mtlLoader.load(mtlpath, function (materials) {
         materials.preload();
@@ -52,7 +52,7 @@ function initElement() {
         objLoader.load(objpath, function (object) {
             modelLoad = object;
             scene.add(modelLoad);
-            object.scale.set(0.5, 0.5, 0.5);
+            object.scale.set(35, 35, 35);
             object.position.y = 0;
             object.position.x = 0;
         });
@@ -73,6 +73,8 @@ function animate() {
     controls.update();
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
+
+    modelLoad.rotation.y += 0.01;
 }
 
 start();
