@@ -36,9 +36,9 @@ function initElement() {
 
     camera.position.set(5,5,1)
 
-    var general = '../SRC/MODELS/Puma/';
-    var mtlpath = 'Puma.mtl';
-    var objpath = 'Puma.obj';
+    var general = '../SRC/MODELS/Adidas/';
+    var mtlpath = 'adidas.mtl';
+    var objpath = 'adidas.obj';
 
     var mtlLoader = new THREE.MTLLoader();
     mtlLoader.setTexturePath(general );
